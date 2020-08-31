@@ -1,0 +1,12 @@
+language: generic
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t asjadjawed/docker-react -f Dockerfile.dev .
+
+# https://create-react-app.dev/docs/running-tests/#linux-macos-bash
+script:
+  - docker run -e CI=true asjadjawed/docker-react yarn test
