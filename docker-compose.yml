@@ -1,0 +1,24 @@
+version: "3"
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /usr/app/node_modules
+      - ./:/usr/app
+    stdin_open: true # due to a bug in create-react-app
+    # tty: true
+    # https://stackoverflow.com/questions/60790696/react-scripts-start-exiting-in-docker-foreground-cmd
+  react-app-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /usr/app/node_modules
+      - ./:/usr/app
+    command: ["yarn", "test"] # over-ride default command in Dockerfile
+    # If we don't setup a testing env we can use:
+    # docker exec -it <container_id> yarn test

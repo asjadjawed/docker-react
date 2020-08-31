@@ -1,0 +1,21 @@
+FROM node:alpine
+
+WORKDIR /usr/app
+
+COPY ./package.json ./
+RUN yarn install
+
+# COPY is not needed when we use volumes
+# COPY ./ ./
+
+CMD ["yarn", "start"]
+
+#build
+# docker build -f Dockerfile.dev .
+
+# run
+# docker run -it -p 3000:3000 <container_id>
+# docker run -it -p 3000:3000 -v /usr/app/node_modules -v $(pwd):/usr/app <container_id>
+
+# test
+# docker exec -it <container_id> yarn test
