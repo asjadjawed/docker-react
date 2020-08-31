@@ -6,7 +6,7 @@ COPY ./package.json ./
 RUN yarn install
 
 # COPY is not needed when we use volumes
-# COPY ./ ./
+COPY ./ ./
 
 CMD ["yarn", "start"]
 
