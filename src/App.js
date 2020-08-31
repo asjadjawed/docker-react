@@ -8,6 +8,14 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hi! Welcome to React CI/CD!</p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
         <p>
           (This React App is deployed on AWS Elasticbeanstalk using Travis-CI +
           Docker)
