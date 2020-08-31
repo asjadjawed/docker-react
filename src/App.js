@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hi! Welcome to React CI/CD with Docker &#9786;</p>
+        <p>Hi! Welcome to React CI/CD!</p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -16,6 +16,10 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+          (This React App is deployed on AWS Elasticbeanstalk using Travis-CI +
+          Docker)
+        </p>
       </header>
     </div>
   );
